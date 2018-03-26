@@ -61,6 +61,19 @@ class TeamCell: UICollectionViewCell {
         super .init(frame: frame)
         
         setupCell()
+        setCellShadow()
+    }
+    
+    func setCellShadow() {
+        
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 3
+        self.layer.masksToBounds = false
+        self.clipsToBounds = false
+        self.layer.cornerRadius = 3
+        
     }
     
     func setupCell() {
@@ -69,7 +82,7 @@ class TeamCell: UICollectionViewCell {
         self.addSubview(teamLabel)
         
         teamImageView.anchor(top: topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 10, paddingBottom: 10, paddingRight: 10, width: 0, height: 50)
-        
+        teamLabel.anchor(top: teamImageView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 0, paddingLeft: 0, paddingBottom: 0, paddingRight: 0)
     }
     
     let teamImageView: UIImageView = {
