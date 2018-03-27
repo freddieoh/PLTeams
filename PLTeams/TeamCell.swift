@@ -9,6 +9,7 @@
 import UIKit
 
 class TeamCell: UICollectionViewCell {
+    static let cellIdentifier = "TeamsCell"
     
     var team: Team? {
         didSet {
@@ -25,7 +26,7 @@ class TeamCell: UICollectionViewCell {
         setupCell()
         setCellShadow()
     }
-
+    
     
     func setupCell() {
         self.backgroundColor = .white
